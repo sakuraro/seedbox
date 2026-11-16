@@ -1,0 +1,30 @@
+services:
+  autobrr:
+    image: ghcr.io/autobrr/autobrr:latest
+    container_name: autobrr
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ:-Asia/Shanghai}
+    user: 1000:1000
+    volumes:
+      - ./autobrr/data/config:/config
+    networks:
+      - seedbox
+    ports:
+      - 7474:7474
+
+  qbittorrent:
+    build: ./qbittorrent
+    image: qbittorrent
+    container_name: qbittorrent
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ:-Asia/Shanghai}
+    volumes:
+      - ./qbittorrent/data/config:/config
+      - ./qbittorrent/data/downloads:/downloads
+    networks:
+      - seedbox
+
+networks:
+  seedbox:
