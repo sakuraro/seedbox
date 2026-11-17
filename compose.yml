@@ -21,10 +21,13 @@ services:
     environment:
       - TZ=${TZ:-Asia/Shanghai}
     volumes:
+      - ./qbittorrent/bin/upload.sh:/usr/bin/upload.sh
       - ./qbittorrent/data/config:/config
       - ./qbittorrent/data/downloads:/downloads
     networks:
       - seedbox
+    # ports:
+    #   - 8080:8080
 
 networks:
   seedbox:
