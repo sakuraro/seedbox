@@ -2,8 +2,9 @@
 ## clone repo in remote
 ```
 git clone https://github.com/sakuraro/seedbox.git
-mkdir -p ./seedbox/autobrr/data
-mkdir -p ./seedbox/qbittorrent/data
+cd ./seedbox
+mkdir -p ./autobrr/data/config
+mkdir -p ./qbittorrent/data/{config,downloads}
 ```
 ## upload configuration from local (if needed)
 ```
@@ -18,7 +19,7 @@ docker compose up -d
 ```
 ## show qbittorrent user/password
 ```
-docker log qbittorrent
+docker logs qbittorrent
 ```
 ## stop services
 ```
