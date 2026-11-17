@@ -1,3 +1,5 @@
+.env
+
 autobrr/data/config/*
 qbittorrent/data/config/*
 qbittorrent/data/downloads/*

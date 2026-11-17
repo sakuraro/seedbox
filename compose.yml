@@ -14,7 +14,10 @@ services:
       - 7474:7474
 
   qbittorrent:
-    build: ./qbittorrent
+    build:
+      context: ./qbittorrent
+      args:
+        NET_ENV: ${NET_ENV:-global}
     image: qbittorrent
     container_name: qbittorrent
     restart: unless-stopped
