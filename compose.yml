@@ -24,6 +24,7 @@ services:
     environment:
       - TZ=${TZ:-Asia/Shanghai}
     volumes:
+      - ./rclone_115/rclone:/usr/bin/rclone
       - ./qbittorrent/bin/upload.sh:/usr/bin/upload.sh
       - ./qbittorrent/data/config:/config
       - ./qbittorrent/data/downloads:/downloads
