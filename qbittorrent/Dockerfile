@@ -4,5 +4,5 @@ RUN if [ "$NET_ENV" = "cn" ]; then \
         sed -i 's#https\?://dl-cdn.alpinelinux.org/alpine#https://mirrors.tuna.tsinghua.edu.cn/alpine#g' /etc/apk/repositories; \
     fi
 RUN apk update \
-    && apk add --no-cache qbittorrent-nox
+    && apk add --no-cache qbittorrent-nox util-linux
 CMD ["qbittorrent-nox", "--confirm-legal-notice", "--profile=/config"]
